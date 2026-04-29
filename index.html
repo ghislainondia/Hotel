@@ -28,7 +28,7 @@
         .border-gold { border-color: var(--gold); }
 
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -45,9 +45,14 @@
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-serif font-bold tracking-tighter text-slate-800">LE GRAND <span class="text-gold">ROYAL</span></span>
-                </div>
+              <div class="flex-shrink-0 flex items-center">
+  <div class="flex items-center gap-3">
+      <img src="logo.jpeg" class="h-10 w-auto" alt="Logo">
+      <span class="text-xl font-serif font-bold text-slate-800">
+          LE GRAND <span class="text-gold">ROYAL</span>
+      </span>
+  </div>
+</div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#accueil" class="hover:text-gold transition">Accueil</a>
                     <a href="#chambres" class="hover:text-gold transition">Nos Chambres</a>
@@ -62,12 +67,34 @@
     <!-- Hero Section -->
     <section id="accueil" class="hero-section h-screen flex items-center justify-center text-center text-white px-4">
         <div class="max-w-3xl">
+          <img src="logo.jpeg"
+     alt="Le Grand Royal"
+     class="mx-auto mb-6 w-40 md:w-56 opacity-90">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">L'Excellence au Coeur du Luxe</h1>
             <p class="text-xl mb-10 font-light">Découvrez un sanctuaire de confort et d'élégance. Une expérience royale vous attend dans nos suites d'exception.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#chambres" class="bg-white text-dark-blue px-8 py-4 rounded-sm font-medium hover:bg-gold hover:text-white transition">Voir les Chambres</a>
-                <a href="#reservation" class="border border-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-dark-blue transition">Réserver Maintenant</a>
-            </div>
+
+    <!-- Bouton 1 -->
+    <a href="#chambres"
+       class="bg-white/10 backdrop-blur-md text-white border border-white/30
+       px-8 py-4 rounded-sm font-medium
+       transition transform hover:scale-105 active:scale-95
+       hover:bg-white hover:text-slate-900">
+
+        Explorer nos chambres
+    </a>
+
+    <!-- Bouton 2 -->
+    <a href="#reservation"
+       class="border border-white text-white
+       px-8 py-4 rounded-sm font-medium
+       transition transform hover:scale-105 active:scale-95
+       hover:bg-white hover:text-slate-900">
+
+        Réserver maintenant
+    </a>
+
+</div>
         </div>
     </section>
 
@@ -89,7 +116,7 @@
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="text-2xl font-bold">Suite VIP Royale</h3>
-                            <span class="text-gold font-bold">450€ / nuit</span>
+                            <span class="text-gold font-bold">450 XOF / nuit</span>
                         </div>
                         <p class="text-slate-600 mb-4 text-sm">Le summum du luxe avec vue panoramique, majordome personnel et accès exclusif au spa.</p>
                         <ul class="text-xs flex gap-4 text-slate-500 mb-6">
@@ -109,7 +136,7 @@
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="text-2xl font-bold">Chambre Spacieuse</h3>
-                            <span class="text-gold font-bold">280€ / nuit</span>
+                            <span class="text-gold font-bold">280 XOF / nuit</span>
                         </div>
                         <p class="text-slate-600 mb-4 text-sm">Idéale pour les familles, offrant un grand salon séparé et tout l'équipement moderne nécessaire.</p>
                         <ul class="text-xs flex gap-4 text-slate-500 mb-6">
@@ -129,7 +156,7 @@
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="text-2xl font-bold">Chambre Standard</h3>
-                            <span class="text-gold font-bold">150€ / nuit</span>
+                            <span class="text-gold font-bold">150 XOF / nuit</span>
                         </div>
                         <p class="text-slate-600 mb-4 text-sm">Le confort classique signé Le Grand Royal. Parfait pour les séjours d'affaires ou escapades.</p>
                         <ul class="text-xs flex gap-4 text-slate-500 mb-6">
@@ -214,13 +241,13 @@
     <footer id="contact" class="bg-slate-100 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-serif font-bold mb-6">LE GRAND ROYAL</h2>
-            <p class="text-slate-500 mb-8">123 Avenue des Champs-Élysées, Paris, France</p>
+            <p class="text-slate-500 mb-8">point E, avenue ponty. Sénégal, Dakar</p>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="text-slate-400 hover:text-gold transition text-xl"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="text-slate-400 hover:text-gold transition text-xl"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="text-slate-400 hover:text-gold transition text-xl"><i class="fab fa-tripadvisor"></i></a>
             </div>
-            <p class="text-xs text-slate-400 uppercase tracking-widest">© 2024 Le Grand Royal - Tous droits réservés</p>
+            <p class="text-xs text-slate-400 uppercase tracking-widest">© 2026 Le Grand Royal - Tous droits réservés</p>
         </div>
     </footer>
 
@@ -234,7 +261,7 @@
             event.preventDefault();
             const btn = event.target.querySelector('button');
             const success = document.getElementById('successMsg');
-            
+
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Vérification...';
             btn.disabled = true;
 
