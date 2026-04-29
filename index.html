@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hôtel Le Grand Royal - Réservation de Luxe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        :root {
+            --gold: #c5a059;
+            --dark-blue: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .room-card:hover .room-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-serif font-bold tracking-tighter text-slate-800">LE GRAND <span class="text-gold">ROYAL</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="hover:text-gold transition">Accueil</a>
+                    <a href="#chambres" class="hover:text-gold transition">Nos Chambres</a>
+                    <a href="#reservation" class="hover:text-gold transition">Réservation</a>
+                    <a href="#contact" class="hover:text-gold transition">Contact</a>
+                </div>
+                <button onclick="document.getElementById('reservation').scrollIntoView();" class="bg-gold text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">Réserver</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">L'Excellence au Coeur du Luxe</h1>
+            <p class="text-xl mb-10 font-light">Découvrez un sanctuaire de confort et d'élégance. Une expérience royale vous attend dans nos suites d'exception.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#chambres" class="bg-white text-dark-blue px-8 py-4 rounded-sm font-medium hover:bg-gold hover:text-white transition">Voir les Chambres</a>
+                <a href="#reservation" class="border border-white px-8 py-4 rounded-sm font-medium hover:bg-white hover:text-dark-blue transition">Réserver Maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chambres Section -->
+    <section id="chambres" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Nos Chambres & Suites</h2>
+                <div class="h-1 w-20 bg-gold mx-auto mb-6"></div>
+                <p class="text-slate-500 max-w-2xl mx-auto">Chaque chambre est conçue pour offrir une atmosphère de sérénité et un confort inégalé.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Chambre VIP -->
+                <div class="room-card group relative overflow-hidden rounded-lg shadow-lg bg-white">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chambre VIP" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-bold">Suite VIP Royale</h3>
+                            <span class="text-gold font-bold">450€ / nuit</span>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm">Le summum du luxe avec vue panoramique, majordome personnel et accès exclusif au spa.</p>
+                        <ul class="text-xs flex gap-4 text-slate-500 mb-6">
+                            <li><i class="fas fa-expand mr-1"></i> 85m²</li>
+                            <li><i class="fas fa-wifi mr-1"></i> Fibre</li>
+                            <li><i class="fas fa-hot-tub mr-1"></i> Jacuzzi</li>
+                        </ul>
+                        <button onclick="selectRoom('VIP')" class="w-full border border-gold text-gold py-2 rounded hover:bg-gold hover:text-white transition uppercase text-sm font-bold tracking-widest">Sélectionner</button>
+                    </div>
+                </div>
+
+                <!-- Chambre Spacieuse -->
+                <div class="room-card group relative overflow-hidden rounded-lg shadow-lg bg-white">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chambre Spacieuse" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-bold">Chambre Spacieuse</h3>
+                            <span class="text-gold font-bold">280€ / nuit</span>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm">Idéale pour les familles, offrant un grand salon séparé et tout l'équipement moderne nécessaire.</p>
+                        <ul class="text-xs flex gap-4 text-slate-500 mb-6">
+                            <li><i class="fas fa-expand mr-1"></i> 55m²</li>
+                            <li><i class="fas fa-bed mr-1"></i> King Size</li>
+                            <li><i class="fas fa-tv mr-1"></i> 4K Smart TV</li>
+                        </ul>
+                        <button onclick="selectRoom('Spacieuse')" class="w-full border border-gold text-gold py-2 rounded hover:bg-gold hover:text-white transition uppercase text-sm font-bold tracking-widest">Sélectionner</button>
+                    </div>
+                </div>
+
+                <!-- Chambre Standard -->
+                <div class="room-card group relative overflow-hidden rounded-lg shadow-lg bg-white">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chambre Standard" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-2xl font-bold">Chambre Standard</h3>
+                            <span class="text-gold font-bold">150€ / nuit</span>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm">Le confort classique signé Le Grand Royal. Parfait pour les séjours d'affaires ou escapades.</p>
+                        <ul class="text-xs flex gap-4 text-slate-500 mb-6">
+                            <li><i class="fas fa-expand mr-1"></i> 30m²</li>
+                            <li><i class="fas fa-coffee mr-1"></i> Nespresso</li>
+                            <li><i class="fas fa-shower mr-1"></i> Douche Italienne</li>
+                        </ul>
+                        <button onclick="selectRoom('Standard')" class="w-full border border-gold text-gold py-2 rounded hover:bg-gold hover:text-white transition uppercase text-sm font-bold tracking-widest">Sélectionner</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white text-slate-900 rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                <div class="md:w-1/3 bg-gold p-10 text-white flex flex-col justify-center">
+                    <h2 class="text-3xl font-serif font-bold mb-4">Réservez votre séjour</h2>
+                    <p class="opacity-90 mb-6">Bénéficiez des meilleurs tarifs en réservant directement sur notre site officiel.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="text-sm">Annulation gratuite</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="text-sm">Petit-déjeuner inclus</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="text-sm">Wi-Fi Haut débit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 p-10">
+                    <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Arrivée</label>
+                                <input type="date" required class="w-full border rounded-md p-2 focus:ring-2 focus:ring-gold outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Départ</label>
+                                <input type="date" required class="w-full border rounded-md p-2 focus:ring-2 focus:ring-gold outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Catégorie de Chambre</label>
+                            <select id="roomType" class="w-full border rounded-md p-2 focus:ring-2 focus:ring-gold outline-none">
+                                <option value="Standard">Standard</option>
+                                <option value="Spacieuse">Spacieuse</option>
+                                <option value="VIP">VIP Royale</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Adultes</label>
+                                <input type="number" min="1" value="1" class="w-full border rounded-md p-2">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Enfants</label>
+                                <input type="number" min="0" value="0" class="w-full border rounded-md p-2">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" placeholder="votre@email.com" required class="w-full border rounded-md p-2 focus:ring-2 focus:ring-gold outline-none">
+                        </div>
+                        <button type="submit" class="w-full bg-slate-900 text-white py-3 rounded-md hover:bg-slate-800 transition font-bold uppercase tracking-widest mt-4">Confirmer la Disponibilité</button>
+                    </form>
+                    <div id="successMsg" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-md text-center">
+                        <i class="fas fa-check-circle mr-2"></i> Demande envoyée ! Nous vous contacterons sous peu.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-serif font-bold mb-6">LE GRAND ROYAL</h2>
+            <p class="text-slate-500 mb-8">123 Avenue des Champs-Élysées, Paris, France</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-slate-400 hover:text-gold transition text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-slate-400 hover:text-gold transition text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-slate-400 hover:text-gold transition text-xl"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+            <p class="text-xs text-slate-400 uppercase tracking-widest">© 2024 Le Grand Royal - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        function selectRoom(type) {
+            document.getElementById('roomType').value = type;
+            document.getElementById('reservation').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button');
+            const success = document.getElementById('successMsg');
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Vérification...';
+            btn.disabled = true;
+
+            // Simulation d'envoi
+            setTimeout(() => {
+                event.target.classList.add('hidden');
+                success.classList.remove('hidden');
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
